@@ -1,5 +1,8 @@
 package com.wendel.helpdesk.domain.enums;
 
+import lombok.Getter;
+
+@Getter
 public enum Perfil {
 
     ADMIN(0, "ROLE_ADMIN"),
@@ -12,14 +15,6 @@ public enum Perfil {
     Perfil(Integer codigo, String descricao) {
         this.codigo = codigo;
         this.descricao = descricao;
-    }
-
-    public Integer getCodigo() {
-        return codigo;
-    }
-
-    public String getDescricao() {
-        return descricao;
     }
 
     public static Perfil toEnum(Integer cod) {

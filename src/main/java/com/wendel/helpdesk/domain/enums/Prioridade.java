@@ -1,5 +1,8 @@
 package com.wendel.helpdesk.domain.enums;
 
+import lombok.Getter;
+
+@Getter
 public enum Prioridade {
 
     BAIXA(0, "BAIXA"),
@@ -12,14 +15,6 @@ public enum Prioridade {
     Prioridade(Integer codigo, String descricao) {
         this.codigo = codigo;
         this.descricao = descricao;
-    }
-
-    public Integer getCodigo() {
-        return codigo;
-    }
-
-    public String getDescricao() {
-        return descricao;
     }
 
     public static Prioridade toEnum(Integer cod) {

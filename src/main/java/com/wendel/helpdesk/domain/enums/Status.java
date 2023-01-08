@@ -1,5 +1,8 @@
 package com.wendel.helpdesk.domain.enums;
 
+import lombok.Getter;
+
+@Getter
 public enum Status {
 
     ABERTO(0, "ABERTO"),
@@ -12,14 +15,6 @@ public enum Status {
     Status(Integer codigo, String descricao) {
         this.codigo = codigo;
         this.descricao = descricao;
-    }
-
-    public Integer getCodigo() {
-        return codigo;
-    }
-
-    public String getDescricao() {
-        return descricao;
     }
 
     public static Status toEnum(Integer cod) {
