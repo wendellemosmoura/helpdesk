@@ -1,6 +1,7 @@
 package com.wendel.helpdesk.services;
 
 import com.wendel.helpdesk.domain.Tecnico;
+import com.wendel.helpdesk.domain.dtos.TecnicoDTO;
 import com.wendel.helpdesk.repositories.TecnicoRepository;
 import com.wendel.helpdesk.services.exceptions.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,5 +23,11 @@ public class TecnicoService {
 
     public List<Tecnico> findAll() {
         return tecnicoRepository.findAll();
+    }
+
+    public Tecnico create(TecnicoDTO objDTO) {
+        objDTO.setId(null);
+        Tecnico newObj = new Tecnico(objDTO);
+        return tecnicoRepository.save(newObj);
     }
 }
