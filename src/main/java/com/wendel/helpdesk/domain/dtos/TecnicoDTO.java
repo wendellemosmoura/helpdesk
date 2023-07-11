@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.wendel.helpdesk.domain.Tecnico;
 import com.wendel.helpdesk.domain.enums.Perfil;
 
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.HashSet;
@@ -14,9 +15,17 @@ public class TecnicoDTO implements Serializable {
     private static final long serialVersionUID = 1L;
 
     protected Integer id;
+
+    @NotNull(message = "Nome inválido")
     protected String nome;
+
+    @NotNull(message = "CPF inválido")
     protected String cpf;
+
+    @NotNull(message = "E-mail inválido")
     protected String email;
+
+    @NotNull(message = "Senha inválida")
     protected String senha;
     protected Set<Integer> perfis = new HashSet<>();
     @JsonFormat(pattern = "dd/MM/yyyy")
