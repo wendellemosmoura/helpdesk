@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping(value = "/tecnicos")
+@RequestMapping(value = "/v1/tecnicos")
 public class TecnicoResource {
 
     @Autowired
