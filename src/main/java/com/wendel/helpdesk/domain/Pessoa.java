@@ -2,6 +2,7 @@ package com.wendel.helpdesk.domain;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.wendel.helpdesk.domain.enums.Perfil;
+import lombok.AccessLevel;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -32,6 +33,8 @@ public abstract class Pessoa implements Serializable {
     protected String email;
     protected String senha;
 
+    @Getter(AccessLevel.NONE)
+    @Setter(AccessLevel.NONE)
     @ElementCollection(fetch = FetchType.EAGER)
     @CollectionTable(name = "PERFIS")
     protected Set<Integer> perfis = new HashSet<>();
