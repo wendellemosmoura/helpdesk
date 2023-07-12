@@ -19,7 +19,6 @@ public class Tecnico extends Pessoa {
     private List<Chamado> chamados = new ArrayList<>();
 
     public Tecnico() {
-
         super();
         addPerfil(Perfil.TECNICO);
     }
