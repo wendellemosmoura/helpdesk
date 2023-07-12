@@ -3,6 +3,7 @@ package com.wendel.helpdesk.domain.dtos;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.wendel.helpdesk.domain.Tecnico;
 import com.wendel.helpdesk.domain.enums.Perfil;
+import org.hibernate.validator.constraints.br.CPF;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -22,9 +23,8 @@ public class TecnicoDTO implements Serializable {
     @Size(max = 200, message = "Nome muito longo")
     protected String nome;
 
+    @CPF
     @NotNull(message = "CPF inválido")
-    @Size(min = 11, message = "CPF inválido, número menor que 11 dígitos")
-    @Size(max = 11, message = "CPF inválido, número maior que 11 dígitos")
     protected String cpf;
 
     @NotNull(message = "E-mail inválido")
