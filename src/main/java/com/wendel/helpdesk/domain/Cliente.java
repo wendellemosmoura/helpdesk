@@ -2,10 +2,7 @@ package com.wendel.helpdesk.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.wendel.helpdesk.domain.dtos.ClienteDTO;
-import com.wendel.helpdesk.domain.dtos.TecnicoDTO;
 import com.wendel.helpdesk.domain.enums.Perfil;
-import lombok.Getter;
-import lombok.Setter;
 
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
