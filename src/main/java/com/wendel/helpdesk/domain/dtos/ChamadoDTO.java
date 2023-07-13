@@ -3,6 +3,7 @@ package com.wendel.helpdesk.domain.dtos;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.wendel.helpdesk.domain.Chamado;
 
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.time.LocalDate;
 
@@ -14,11 +15,17 @@ public class ChamadoDTO implements Serializable {
     private LocalDate dataAbertura = LocalDate.now();
     @JsonFormat(pattern = "dd/MM/yyyy")
     private LocalDate dataFechamento;
+    @NotNull(message = "Campo Prioridade é obrigatório")
     private Integer prioridade;
+    @NotNull(message = "Campo Status é obrigatório")
     private Integer status;
+    @NotNull(message = "Campo Título é obrigatório")
     private String titulo;
+    @NotNull(message = "Campo Observações é obrigatório")
     private String observacoes;
+    @NotNull(message = "Campo Técnico é obrigatório")
     private Integer tecnico;
+    @NotNull(message = "Campo Cliente é obrigatório")
     private Integer cliente;
     private String nomeTecnico;
     private String nomeCliente;
